@@ -1,0 +1,6 @@
+venv/
+env/
+uploads/
+users.txt
+__pycache__/
+*.pyc
