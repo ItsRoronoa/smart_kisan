@@ -116,23 +116,22 @@ def predict():
 
     # classes
     CLASS_NAMES = {
-        0:"Pepper__bell__Bacterial_spot",
-        1: "Pepper__bell__healthy",
-        2: "Potato__early_blight",
-        3: "Potato__late_blight",
-        4: "Potato__healthy",
+        0: "Pepper__bell___Bacterial_spot",
+        1: "Pepper__bell___healthy",
+        2: "Potato___Early_blight",
+        3: "Potato___Late_blight",
+        4: "Potato___healthy",
         5: "Tomato_Bacterial_spot",
         6: "Tomato_Early_blight",
-        7: "Tomato_",
-        8: "",
-        9: "Disease 9 (Placeholder 9)",
-        10: "Disease 10 (Placeholder 10)",
-        11: "Disease 11 (Placeholder 11)",
-        12: "Disease 12 (Placeholder 12)",
-        13: "Disease 13 (Placeholder 13)",
-        14: "Disease 14 (Placeholder 14)"
+        7: "Tomato_Late_blight",
+        8: "Tomato_Leaf_Mold",
+        9: "Tomato_Septoria_leaf_spot",
+        10: "Tomato_Spider_mites_Two_spotted_spider_mite",
+        11: "Tomato__Target_Spot",
+        12: "Tomato__Tomato_YellowLeaf__Curl_Virus",
+        13: "Tomato__Tomato_mosaic_virus",
+        14: "Tomato_healthy"
     }
-
     label_name = CLASS_NAMES.get(int(predicted_class), f"Class {int(predicted_class)}")
 
     return jsonify({
@@ -143,4 +142,4 @@ def predict():
     })
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(hpost="0.0.0.0", port=int(os.environ.get("PORT",10000)))
